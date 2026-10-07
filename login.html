@@ -5,167 +5,41 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio de sesión - The New York Times</title>
+    <title>Login - Zona Informativa</title>
     <style>
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #111;
-            background: white;
-        }
-        .top {
-            height: 58px;
-            border-top: 4px solid #5a4242;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo {
-            font-family: Georgia, "Times New Roman", serif;
-            font-weight: bold;
-            font-size: 21px;
-        }
-        .login-box {
-            width: 405px;
-            margin: 38px auto 0;
-        }
-        h1 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 28px;
-            text-align: center;
-            margin: 0 0 18px;
-        }
-        label {
-            display: block;
-            font-weight: bold;
-            font-size: 12px;
-            margin-bottom: 6px;
-        }
-        input {
-            width: 100%;
-            height: 42px;
-            border: 1px solid #222;
-            padding: 8px;
-            font-size: 15px;
-        }
-        .continue {
-            width: 100%;
-            height: 40px;
-            margin-top: 16px;
-            border: 0;
-            background: #111;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .or {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 18px 0;
-            font-size: 12px;
-            font-weight: bold;
-            justify-content: center;
-        }
-        .or:before, .or:after {
-            content: "";
-            height: 1px;
-            background: #ddd;
-            flex: 1;
-        }
-        .terms {
-            text-align: center;
-            font-size: 12px;
-            line-height: 19px;
-            margin: 0 4px 17px;
-        }
-        .terms a, .school, footer a {
-            color: #111;
-            text-decoration: underline;
-        }
-        .social {
-            width: 100%;
-            height: 40px;
-            background: white;
-            border: 1px solid #222;
-            margin-bottom: 8px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .school {
-            display: block;
-            text-align: center;
-            font-size: 12px;
-            font-weight: bold;
-            margin-top: 16px;
-        }
-        .message {
-            text-align: center;
-            font-size: 13px;
-            font-weight: bold;
-            margin-top: 12px;
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            height: 42px;
-            border-top: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 18px;
-            font-size: 10px;
-            color: #666;
-        }
+        * { box-sizing:border-box; }
+        body { margin:0; font-family:Arial,sans-serif; background:#eceff1; color:#222; }
+        .barra { background:#263238; color:white; padding:18px 7%; font-size:24px; font-weight:bold; }
+        .barra span { color:#ffca28; }
+        .caja { width:360px; max-width:90%; background:white; margin:70px auto; padding:28px; border-radius:10px; box-shadow:0 3px 12px #0002; }
+        h1 { text-align:center; font-size:25px; margin-top:0; }
+        p { text-align:center; color:#666; font-size:14px; }
+        label { display:block; font-weight:bold; font-size:13px; margin:18px 0 6px; }
+        input { width:100%; padding:12px; border:1px solid #bbb; border-radius:5px; font-size:14px; }
+        button { width:100%; margin-top:20px; padding:12px; border:0; border-radius:5px; background:#ffca28; font-weight:bold; cursor:pointer; }
+        .regresar { display:block; text-align:center; margin-top:18px; color:#263238; text-decoration:none; font-size:13px; }
+        #mensaje { color:#2e7d32; font-weight:bold; margin-top:15px; }
     </style>
 </head>
 <body>
-    <div class="top">
-        <div class="logo">The New York Times</div>
-    </div>
-
-    <main class="login-box">
-        <h1>Inicia sesión o crea una cuenta.</h1>
-
+    <div class="barra">Zona<span>Informativa</span></div>
+    <main class="caja">
+        <h1>Iniciar sesion</h1>
+        <p>Ingresa tus datos para continuar.</p>
         <form onsubmit="iniciarSesion(event)">
-            <label for="email">Dirección de correo electrónico</label>
-            <input type="email" id="email" required>
-
-            <button class="continue" type="submit">Continuar</button>
+            <label for="correo">Correo electronico</label>
+            <input type="email" id="correo" required>
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" required>
+            <button type="submit">Entrar</button>
         </form>
-
-        <div class="or">o</div>
-
-        <p class="terms">
-            Al continuar, aceptas los <a href="#">Términos de venta</a>,
-            los <a href="#">Términos de servicio</a> y la
-            <a href="#">Política de privacidad</a>.
-        </p>
-
-        <button class="social" type="button">🌈 &nbsp; Continuar con Google</button>
-        <button class="social" type="button">● &nbsp; Continuar con Apple</button>
-
-        <a class="school" href="#">Continúa con el inicio de sesión único para el trabajo o la escuela &gt;</a>
-
-        <div id="mensaje" class="message"></div>
+        <p id="mensaje"></p>
+        <a class="regresar" href="index.html">← Regresar a la pagina principal</a>
     </main>
-
-    <footer>
-        © 2026 Compañía The New York Times
-        <a href="#">política de privacidad</a>
-        <a href="#">Ayuda</a>
-        <a href="#">Contáctanos</a>
-        <a href="#">Avisos de California</a>
-    </footer>
-
     <script>
         function iniciarSesion(event) {
             event.preventDefault();
-            document.getElementById("mensaje").textContent =
-                "Inicio de sesión realizado correctamente.";
+            document.getElementById("mensaje").textContent = "Inicio de sesion realizado correctamente.";
         }
     </script>
 </body>
